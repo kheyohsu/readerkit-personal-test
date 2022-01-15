@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>비디오 리스트 표시</title>
+</head>
+<body>
+<table border="1">
+	<thead>
+		<th>No</th>
+		<th>영상 제목</th>
+	</thead>
+	<tbody>
+		<tr th:each="video, i : ${videoList}">
+			<input type="hidden" th:value="${video.uuid}">
+			<td th:text="${i.index+1}"></td>
+			<td th:text="${video.rkVideoId}" th:onClick="javascript:videoDetail([[${video.uuid}]])"></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+<script type="text/javascript">
+	function videoDetail(uuid) {
+		 location.href="/video?uuid=" + uuid;
+	}
+</script>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.readerkit.restapi.login.LoginMapper">
+
+  <select id="login" resultType="com.readerkit.restapi.login.Login">
+	select 
+		uuid,
+		rk_id,
+		rk_pw,
+		rk_email,
+		rk_tel,
+		rk_address,
+		rk_child_age,
+		rk_child_name,
+		rk_child_sex,
+		rk_reg_id,
+		rk_reg_date,
+		rk_upd_id,
+		rk_upd_date
+	from
+		rk_user
+	where
+		rk_id = #{rkId}
+  </select>
+  
+  <insert id="userReg" parameterType="com.readerkit.restapi.login.Login">
+  	INSERT INTO
+  		rk_user
+  		(
+  			uuid,
+			rk_id,
+			rk_pw,
+			rk_email,
+			rk_tel,
+			rk_address,
+			rk_child_age,
+			rk_child_name,
+			rk_child_sex,
+			rk_reg_id,
+			rk_reg_date,
+			rk_upd_id,
+			rk_upd_date
+  		)
+  		values
+  		(
+  			#{uuid},
+  			#{rkId},
+  			#{rkPw},
+  			#{rkEmail},
+ 			#{rkTel},
+ 			#{rkAddress},
+ 			#{rkChildAge},
+ 			#{rkChildName},
+ 			#{rkChildSex},
+ 			#{rkRegId},
+ 			now(),
+ 			#{rkUpdId},
+ 			now()
+  		)
+  </insert>
+  
+  <select id="searchUser" parameterType="com.readerkit.restapi.login.Login" resultType="int">
+  	SELECT
+  		count(*)
+  	FROM
+  		rk_user
+  	WHERE
+  		rk_id = #{rkId}
+  		and rk_pw = #{rkPw}
+  </select>
+
+</mapper>

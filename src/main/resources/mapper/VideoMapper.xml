@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.readerkit.restapi.video.VideoMapper">
+
+  <select id="videoList" parameterType="String" resultType="com.readerkit.restapi.video.Video">
+	select 
+		uuid,
+		rk_video_id,
+		rk_video_name,
+		rk_video_path,
+		rk_video_curriculum_id,
+		rk_reg_id,
+		rk_reg_date,
+		rk_upd_id,
+		rk_upd_date
+	from 
+		rk_video
+	WHERE
+		rk_video_curriculum_id = #{type}
+	
+  </select>
+  
+  <select id="video" parameterType="String" resultType="com.readerkit.restapi.video.Video">
+  	select 
+		uuid,
+		rk_video_id,
+		rk_video_name,
+		rk_video_path,
+		rk_video_curriculum_id,
+		rk_reg_id,
+		rk_reg_date,
+		rk_upd_id,
+		rk_upd_date
+	from rk_video
+	where
+		uuid = #{uuid}
+  </select>
+
+</mapper>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>메인 페이지</title>
+</head>
+<body>
+	<form>
+		<div id="question1" style="width: 500px; height: 300px;">
+			Q1. 테스트 질문입니다.
+			<input type="radio" name="yesorno1" value="yes">yes
+			<input type="radio" name="yesorno1" value="no">no
+			<input type="button" value="다음" id="next2">
+		</div>
+		<div id="question2" style="display: none;">
+			Q2. 테스트 질문입니다.
+			<input type="radio" name="yesorno2" value="yes">yes
+			<input type="radio" name="yesorno2" value="no">no
+			<input type="button" value="이전" id="prev1">
+			<input type="button" value="다음" id="next3">
+		</div>
+		<div id="question3" style="display: none;">
+			Q3. 테스트 질문입니다.
+			<input type="radio" name="yesorno2" value="yes">yes
+			<input type="radio" name="yesorno2" value="no">no
+			<input type="button" value="이전" id="prev2">
+			<input type="button" value="다음" id="next4">
+		</div>
+		<div id="question4" style="display: none;">
+			Q4. 테스트 질문입니다.
+			<input type="radio" name="yesorno2" value="yes">yes
+			<input type="radio" name="yesorno2" value="no">no
+			<input type="button" value="이전" id="prev3">
+			<input type="button" value="다음" id="next5">
+		</div>
+		<div id="question5" style="display: none;">
+			Q5. 테스트 질문입니다.
+			<input type="radio" name="yesorno2" value="yes">yes
+			<input type="radio" name="yesorno2" value="no">no
+			<input type="button" value="이전" id="prev4">
+			<input type="button" value="다음" id="next6">
+		</div>
+		<div id="question6" style="display: none;">
+			Q6. 테스트 질문입니다.
+			<input type="radio" name="yesorno2" value="yes">yes
+			<input type="radio" name="yesorno2" value="no">no
+			<input type="button" value="이전" id="prev5">
+			<input type="button" value="다음" id="next7">
+		</div>
+		<div id="question7" style="display: none;">
+			Q7. 테스트 질문입니다.
+			<input type="radio" name="yesorno2" value="yes">yes
+			<input type="radio" name="yesorno2" value="no">no
+			<input type="button" value="이전" id="prev6">
+			<input type="button" value="다음" id="next8">
+		</div>
+		<div id="question8" style="display: none;">
+			Q8. 테스트 질문입니다.
+			<input type="radio" name="yesorno2" value="yes">yes
+			<input type="radio" name="yesorno2" value="no">no
+			<input type="button" value="이전" id="prev7">
+			<input type="button" value="다음" id="next9">
+		</div>
+		<div id="question9" style="display: none;">
+			Q9. 테스트 질문입니다.
+			<input type="radio" name="yesorno2" value="yes">yes
+			<input type="radio" name="yesorno2" value="no">no
+			<input type="button" value="이전" id="prev8">
+			<input type="button" value="다음" id="next10">
+		</div>
+		<div id="question10" style="display: none;">
+			Q10. 테스트 질문입니다.
+			<input type="radio" name="yesorno2" value="yes">yes
+			<input type="radio" name="yesorno2" value="no">no
+			<input type="button" value="이전" id="prev9">
+			<input type="button" value="결과보기" id="save">
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		 $("#next2").click(function(){
+		 	$("#question1").css("display", "none");
+		 	$("#question2").css("display", "block");
+		 });
+		 $("#prev1").click(function(){
+		 	$("#question1").css("display", "block");
+		 	$("#question2").css("display", "none");
+		 });
+	});
+</script>
+</html>
